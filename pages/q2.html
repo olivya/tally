@@ -1,5 +1,12 @@
 <div class="jumbotron text-center">
 	<h1>Question dos.</h1>
-	<p>{{ message }}</p>
-	<a href="#/results"><button>Doneskies!</button></a>
+
+	<li ng-repeat="option in options">
+		<label class="options">
+			<input type="radio" name="answer" value="{{q.options}}">
+			{{option}}
+		</label>
+	</li>
+
+	<a href="#/results"><button>Done!</button></a>
 </div>

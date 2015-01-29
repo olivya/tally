@@ -51,11 +51,11 @@ tally.controller('settingsController', function($scope) {
 });
 
 tally.controller('q1Controller', function($scope) {
-	$scope.message = 'Options will go here...';
+	$scope.options = ['Option A','Option B','Option C','Option D'];
 });
 
 tally.controller('q2Controller', function($scope) {
-	$scope.message = "Options.";
+	$scope.options = ['Option A','Option B','Option C','Option D'];
 });
 
 tally.controller('resultsController', function($scope) {
