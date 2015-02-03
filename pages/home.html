@@ -14,7 +14,7 @@
 
 	<div class="panel" ng-show="isSelected(1)"> 
 		<h4>Create Questions</h4> 
-		<form name="addQuestionForm">
+		<form name="addQuestionForm" id="addQuestionForm">
 			Question:<br/><input type="text" ng-model="newQuestion"/><p/>
 			Options:<br/><input type="text" ng-model="newOption"/><p/>
 			<!-- <input type="text" ng-model="newOption2"/><br/> -->
@@ -54,13 +54,14 @@
 							</label>
 						</li>
 					</ul>
+
+					<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
+    				<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
+
 					<button ng-click="check()">Check answer</button>
 					<br/>
         	</div>
     	</div>
-
-    	<div ng-if="userCorrect">Correct!</div>
-    	<div ng-if="userWrong">Try again!</div>
 
     	<button ng-click="next();erase()">Next</button>
  	</div>

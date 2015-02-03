@@ -45,21 +45,30 @@ li {
 	list-style-type: none;
 }
 
-#currentOptions {
-	display:inline;
-	list-style-type:none;
-}
-
 #currentQuestionList {
 	text-align:left;
 }
 
-#currentQuestion{
+#currentQuestions {
+	font-weight:700;
+}
+
+#currentOptions {
+	display:inline;
+	list-style-type:none;
 	font-weight:300;
 }
 
 #optionsList {
 	text-align:left;
+}
+
+#optionsList label {
+	font-weight:100;
+}
+
+#addQuestionForm{
+	margin-top:-30px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
@@ -77,7 +86,7 @@ li {
 }
 
 @media screen and (max-width: 450px) {
-	.nav-pills>li.active { 
+	.nav-pills>li { 
 		width:100%;
 		text-align:center;
 	}
