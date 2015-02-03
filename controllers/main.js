@@ -1,7 +1,7 @@
 tally.controller('mainController', function($scope) {
 	
 	//Shaping up with AngularJS Tutorial:
-	$scope.tab = 2;
+	$scope.tab = 1;
 
 	//switches current tab when new one is clicked
 	$scope.selectTab = function(setTab) {
@@ -43,8 +43,6 @@ tally.controller('mainController', function($scope) {
         $scope.userInput = {};
     };
 
-    //$scope.correctAnswer = $scope.questionBank[$scope.questionIndex];
-
 
 	$scope.addQuestion = function(){
 		$scope.questionBank.push(
@@ -57,13 +55,11 @@ tally.controller('mainController', function($scope) {
 	}
 
 	$scope.userInput = {};
-	//$scope.userCorrect = null;
 
 	$scope.check = function () {
-    	//console.log($scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer]);
     	$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
-    	console.log($scope.correctAnswer);
-    	console.log($scope.userInput);
+    	// console.log($scope.correctAnswer);
+    	// console.log($scope.userInput);
 
     	if ($scope.correctAnswer == $scope.userInput.answer){
     		$scope.userCorrect = true;
@@ -79,6 +75,5 @@ tally.controller('mainController', function($scope) {
     	$scope.userWrong= false;
     	$scope.userCorrect = false;
     };
-
 });
 

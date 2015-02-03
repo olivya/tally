@@ -45,8 +45,43 @@ li {
 	list-style-type: none;
 }
 
+#currentOptions {
+	display:inline;
+	list-style-type:none;
+}
+
+#currentQuestionList {
+	text-align:left;
+}
+
+#currentQuestion{
+	font-weight:300;
+}
+
+#optionsList {
+	text-align:left;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
+{
+	background-color: #21debe;
+}
+
+.nav-pills>li>a {
+	color: #21debe;
+}
 @media screen and (max-width: 768px) {
 	.navbar li a {
+		text-align:center;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.nav-pills>li.active { 
+		width:100%;
+		text-align:center;
+	}
+	.nav>li>a {
 		text-align:center;
 	}
 }

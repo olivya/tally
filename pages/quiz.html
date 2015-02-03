@@ -1,14 +1,6 @@
 <div class="jumbotron text-center">
 
-	<section>
-	<ul class="nav nav-pills">
-		<li><a href>Quiz Yourself</a></li>
-		<li><a href>Create Questions</a></li>
-	</ul>
 
-<!-- 	<div ng-show="tab.isSet(1)"></div>
-	<div ng-show="tab.isSet(2)"></div> -->
-	</section>
 
 
 	<h1>Question #{{$index + 1}}:</h1>
@@ -29,7 +21,7 @@
 		</li>
 	</ul>
 	<div>You chose {{user.answer}}</div>
-	<div>Correct answer is {{question.corAnswer}}</div>
+	<div>Correct answer is {{question.correctAnswer}}</div>
 	<a href="#quiz/{{nextQuestion}}" ng-click="checkAns">Next</a>
 
 <!-- 	{{question}}<br/>

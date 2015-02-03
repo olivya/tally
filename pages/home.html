@@ -1,45 +1,41 @@
 <div class="jumbotron text-center">
-	<p>{{ message }}</p>
+	<!-- <p>{{ message }}</p> -->
 
-	<section>
-		<ul class="nav nav-pills">
-			<li ng-class="{ active:tab === 1}">
+	<section id="tabs">
+		<ul class="nav nav-pills text-center">
+			<li class="text-center" ng-class="{ active:tab === 1}">
 				<a href ng-click="selectTab(1)">1. Create Questions</a>
 			</li>
-
-			<li ng-class="{ active:tab === 2}">
-				<a href ng-click="selectTab(2)">2. Quiz Yourself</a>
+			<li class="text-center" ng-class="{ active:tab === 2}">
+				<a href ng-click="selectTab(2)">2. Quiz Yourself!</a>
 			</li>
 		</ul>
 	</section>
 
 	<div class="panel" ng-show="isSelected(1)"> 
 		<h4>Create Questions</h4> 
-		<ul>
-			<li ng-repeat="q in questionBank">
-				{{q.question}}
-					<ul>
-						<li ng-repeat="option in q.options">
-							{{option}}
-						</li>
-					</ul>
-			</li>
-		</ul>
-
-		<p>
-
 		<form name="addQuestionForm">
-			Question:<input type="text" ng-model="newQuestion"/><br/>
-			Option:<input type="text" ng-model="newOption"/><br/>
+			Question:<br/><input type="text" ng-model="newQuestion"/><p/>
+			Options:<br/><input type="text" ng-model="newOption"/><p/>
 			<!-- <input type="text" ng-model="newOption2"/><br/> -->
 			<input type="submit" value="Submit" ng-click="addQuestion()"/> 
 		</form>
 
-		</p> 
+		<h4>Current Questions:</h4>
+		<ul id="currentQuestionList">
+			<li id="currentQuestions" ng-repeat="q in questionBank">
+				{{q.question}}
+					<ul>
+						<li id="currentOptions" ng-repeat="option in q.options">
+							{{option}},
+						</li>
+					</ul>
+			</li>
+		</ul>
  	</div>
 
  	<div class="panel" ng-show="isSelected(2)">
-		<h4>Quiz yourself!</h4> 
+		<!-- <h4>Quiz yourself!</h4>  -->
 		<!-- <a href="" ng-click="">Start!</a> -->
 
 <!-- Referenced Rob's answer https://stackoverflow.com/questions/25087576/angularjs-ng-repeat-show-one-item-at-a-time for logic (http://jsfiddle.net/c6RZK/) for cycling through questions-->
@@ -47,7 +43,7 @@
         	<div ng-if="question_index == $index">
             	{{q.question}}
 					<ul>
-						<li ng-repeat="option in q.options">		
+						<li id="optionsList" ng-repeat="option in q.options">		
 							<label>
 							<input 	type="radio"
 									ng-model="userInput.answer"
@@ -60,23 +56,12 @@
 					</ul>
 					<button ng-click="check()">Check answer</button>
 					<br/>
-<!-- 					Correct answer: {{ questionBank[question_index].options[questionBank[question_index].answer] }} -->
         	</div>
     	</div>
 
     	<div ng-if="userCorrect">Correct!</div>
     	<div ng-if="userWrong">Try again!</div>
 
-    	<!-- {{ questionBank[0].options[questionBank[0].answer] }} -->
-
-<!--     	<h2>Selected Answer</h2>
-    	<pre>
-        	{{ userInput.answer }}
-        	<br/>
-        	{{ questionBank[0].options[questionBank[0].answer] }}
-    	</pre> -->
-
     	<button ng-click="next();erase()">Next</button>
-
  	</div>
 </div>
