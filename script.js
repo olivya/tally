@@ -31,22 +31,23 @@ tally.config(function ($routeProvider,$locationProvider) {
 //Reference used for services:
 //https://fdietz.github.io/recipes-with-angular-js/controllers/sharing-code-between-controllers-using-services.html
 tally.factory("QuestionBank", function() {
-  var questionBank = [{
-      question: 'This is Question 1',
-      options: ['B','B','B','B'],
-      answer: 1
-    },
-    {
-      question: 'This is Question 2',
-      options: ['Not me.','Wrong','Pick me! :D','Nope'],
-      answer: 2
-    },
-    {
-      question: 'This is Question 3',
-      options: ['Wrong','Nope','Not me.','Pick me! :D'],
-      answer: 3
-    }
-    ];
+  var questionBank = [];
+  // [{
+  //     question: 'This is Question 1',
+  //     options: ['B','B','B','B'],
+  //     answer: 1
+  //   },
+  //   {
+  //     question: 'This is Question 2',
+  //     options: ['Not me.','Wrong','Pick me! :D','Nope'],
+  //     answer: 2
+  //   },
+  //   {
+  //     question: 'This is Question 3',
+  //     options: ['Wrong','Nope','Not me.','Pick me! :D'],
+  //     answer: 3
+  //   }
+  //   ];
 
     //subjects stuff
     // var biologyQuestions = [{

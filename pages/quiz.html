@@ -1,23 +1,74 @@
 <div class="jumbotron text-center">
-	<div ng-repeat="q in questionBank">
-    	<div ng-if="question_index == $index">
-        	{{q.question}}
-				<ul>
-					<li id="optionsList" ng-repeat="option in q.options track by $index">		
-						<label>
-						<input 	type="radio"
-								ng-model="userInput.answer"
-								value="{{ $index }}"
-								name="answer"
-								ng-click="erase()">
-						{{option}} 
-						</label>
-					</li>
-				</ul>
-			<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
-			<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
-			<button ng-click="check()">Check answer</button>
-    	</div>
-	</div>
-    <button ng-click="next();erase()">Next</button>
+
+	<section id="tabs">
+		<ul class="nav nav-pills text-center">
+			<li class="text-center" ng-class="{ active:tab === 1}">
+				<a href ng-click="selectTab(1)">1. Create Questions</a>
+			</li>
+			<li class="text-center" ng-class="{ active:tab === 2}" ng-click="erase()">
+				<a href ng-click="selectTab(2)">2. Review Questions</a>
+			</li>
+		</ul>
+	</section>
+
+	<div class="panel" ng-show="isSelected(1)"> 
+		<h4>Create Questions</h4> 
+
+		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
+			Question:<br/><input type="text" ng-model="newQuestion" required/><p/><br/>
+			<ul>
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=0
+						name="options"
+						required>
+					A:<input type="text" ng-model="newOptionA" required/><p/>
+				</li>
+
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=1
+						name="options"
+						required>
+					B:<input type="text" ng-model="newOptionB" required/><p/>
+				</li>
+				
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=2
+						name="options"
+						required>
+					C:<input type="text" ng-model="newOptionC" required/><p/>
+				</li>
+
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=3
+						name="options"
+						required>
+					D:<input type="text" ng-model="newOptionD" required/><p/>
+				</li>
+			</ul>
+
+			<input type="submit" value="Submit"/> 
+		</form>
+ 	</div>
+
+ 	<div class="panel" ng-show="isSelected(2)">
+ 		<h4>Current Questions:</h4>
+		<ul id="currentQuestionList">
+			<li id="currentQuestions" ng-repeat="q in questionBank track by $index">
+				{{q.question}}
+					<ul>
+						<li id="currentOptions" ng-repeat="option in q.options track by $index">
+							{{option}} <br/>
+						</li>
+					</ul>
+				<button ng-click="deleteQuestion($index)">Remove</button>
+			</li>
+		</ul>
 </div>

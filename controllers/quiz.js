@@ -1,55 +1,43 @@
-tally.controller('quizController', function($scope, $route, $location, QuestionBank) {
-
+tally.controller('quizController', function($scope, QuestionBank) {
+	
 	$scope.questionBank = QuestionBank.custom();
+	
+	//Shaping up with AngularJS Tutorial:
+	$scope.tab = 1;
 
-// subject stuff:
-  // $scope.location = $location;
+	//switches current tab when new one is clicked
+	$scope.selectTab = function(setTab) {
+		$scope.tab = setTab;
+	};
 
-  // console.log($location.path());
+	//displays tab if returns true (aka. this tab === tab that was checked)
+	$scope.isSelected = function(checkTab) {
+		return $scope.tab === checkTab;
+	};
 
-  // //determine which question bank to pull
-  // if ($location.path() === "/quiz/custom") {
-  // 	$scope.questionBank = QuestionBank.custom();
-  // } 
-  // else if ($location.path() === "/quiz/biology") {
-  // 	$scope.questionBank = QuestionBank.biology();
-  // }
-  // else if ($location.path() === "/quiz/history") {
-  // 	$scope.questionBank = QuestionBank.history();
-  // }
-  // else $scope.questionBank = QuestionBank.custom();
+	$scope.message = 'Tally is a customizable trivia app.';
 
-  $scope.question_index = 0;
+	$scope.addQuestion = function(){
+		$scope.questionBank.push(
+			{
+				question:$scope.newQuestion,
+				//populate options:
+				options:[ $scope.newOptionA,
+						  $scope.newOptionB,
+						  $scope.newOptionC,
+						  $scope.newOptionD ],
+				answer:$scope.setAnswer
+			});
 
-      $scope.next = function () {
-        if ($scope.question_index >= $scope.questionBank.length - 1) {
-            $scope.question_index = 0;
-        } else {
-            $scope.question_index++;
-        }
-        $scope.userInput = {};
-    };
+		$scope.newQuestion = "";
+		$scope.newOptionA = "";
+		$scope.newOptionB = "";
+		$scope.newOptionC = "";
+		$scope.newOptionD = "";
+		$scope.setAnswer = "";
+	};
 
-	$scope.userInput = {};
-
-	$scope.check = function () {
-    	//$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
-    	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
-    	// console.log($scope.correctAnswer);
-    	// console.log($scope.userInput);
-
-    	if ($scope.correctAnswer == $scope.userInput.answer){
-    		$scope.userCorrect = true;
-    		$scope.userWrong= false;
-    	}
-    	else {
-    		$scope.userWrong = true;
-    		$scope.userCorrect = false;
-    	}
-    };
-
-    $scope.erase = function (){
-    	$scope.userWrong= false;
-    	$scope.userCorrect = false;
+	 $scope.deleteQuestion = function (i){ // i = $index from home.html
+    	$scope.questionBank.splice(i,1);
     };
 });
