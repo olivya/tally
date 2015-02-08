@@ -1,28 +1,117 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center container">
 
 	<section id="tabs">
 		<ul class="nav nav-pills text-center">
 			<li class="text-center" ng-class="{ active:tab === 1}">
-				<a href ng-click="selectTab(1)">1. Create Questions</a>
+				<a href ng-click="selectTab(1)">1. Create<br/>Questions</a>
 			</li>
 			<li class="text-center" ng-class="{ active:tab === 2}" ng-click="erase()">
-				<a href ng-click="selectTab(2)">2. Review Questions</a>
+				<a href ng-click="selectTab(2)">2. Review<br/>Questions</a>
 			</li>
 		</ul>
 	</section>
 
 	<div class="panel" ng-show="isSelected(1)"> 
 
+<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
+			<input type="text"
+				placeholder="Question"
+				ng-model="newQuestion"
+				class="form-control question-input"
+				required/><p/>
+
+	<div class="row">
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	        <label>
+		        <input type="radio"
+					ng-model="setAnswer"
+					value=0
+					name="options"
+					class="radio"
+					required>
+				<div></div>
+			</label>
+	      </span>
+	      	<input type="text" ng-model="newOptionA" required placeholder="Option A" class="form-control option-input"/><p/>
+	    </div>
+	  </div><p/>
+
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	      	<label>
+	        <input type="radio"
+				ng-model="setAnswer"
+				value=1
+				name="options"
+				class="radio"
+				required>
+				<div></div>
+			</label>
+	      </span>
+	      <input type="text" ng-model="newOptionB" required placeholder="Option B" class="form-control option-input"/><p/>
+	    </div>
+	  </div><p/>
+
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	      	<label>
+	        <input type="radio"
+				ng-model="setAnswer"
+				value=3
+				name="options"
+				class="radio"
+				required>
+				<div></div>
+			</label>
+	      </span>
+	      <input type="text" ng-model="newOptionC" required placeholder="Option C" class="form-control option-input"/><p/>
+	    </div>
+	  </div><p/>
+
+	    <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	      	<label>
+	        <input type="radio"
+				ng-model="setAnswer"
+				value=4
+				name="options"
+				class="radio"
+				required>
+				<div></div>
+			</label>
+	      </span>
+	      <input type="text" ng-model="newOptionD" required placeholder="Option D" class="form-control option-input"/><p/>
+	    </div>
+	  </div><p/>
+
+	</div>
+<input type="submit" class="btn submit-question" value="Submit"/> 
+
+		</form>
+
+<!-- <div class="input-group">
+      <span class="input-group-addon">
 		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
-			Question:<br/><input type="text" ng-model="newQuestion" required/><p/><br/>
+			<input type="text"
+				placeholder="Question"
+				ng-model="newQuestion"
+				class="form-control"
+				required/>
 			<ul>
 				<li>
 					<input type="radio"
 						ng-model="setAnswer"
 						value=0
 						name="options"
+						class="col-xs-1 col-md-4"
 						required>
-					A:<input type="text" ng-model="newOptionA" required/><p/>
+					<input type="text" ng-model="newOptionA" required
+					placeholder="Option A" class="col-xs-11 col-md-4"/><p/>
 				</li>
 
 				<li>
@@ -31,7 +120,8 @@
 						value=1
 						name="options"
 						required>
-					B:<input type="text" ng-model="newOptionB" required/><p/>
+					<input type="text" ng-model="newOptionB" required
+					placeholder="Option B" class="form-control options"/><p/>
 				</li>
 				
 				<li>
@@ -40,7 +130,8 @@
 						value=2
 						name="options"
 						required>
-					C:<input type="text" ng-model="newOptionC" required/><p/>
+					<input type="text" ng-model="newOptionC" required
+					placeholder="Option C" class="form-control options"/><p/>
 				</li>
 
 				<li>
@@ -49,12 +140,16 @@
 						value=3
 						name="options"
 						required>
-					D:<input type="text" ng-model="newOptionD" required/><p/>
+					<input type="text" ng-model="newOptionD" required
+					placeholder="Option D" class="form-control options"/><p/>
 				</li>
-			</ul>
+			</ul> -->
 
-			<input type="submit" value="Submit"/> 
-		</form>
+			<!-- <input type="submit" value="Submit"/> 
+
+		</form> -->
+	</span>
+</div>
  	</div>
 
  	<div class="panel" ng-show="isSelected(2)">

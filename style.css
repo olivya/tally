@@ -109,6 +109,9 @@ li {
 	color: #DFBFFF;
 	border: 2px solid #DFBFFF;
  	border-radius: 8px 8px 8px 8px;
+ 	line-height: 17px;
+ 	padding-left:30px;
+ 	padding-right:30px;
 }
 
 .nav-pills>li.active>a,
@@ -140,3 +143,54 @@ li {
 	display:inline-block;
 	font-weight: 300;
 }
+
+/*Reference for styling radio buttons:
+https://stackoverflow.com/questions/4516217/make-radio-button-bigger
+(Cas Bloem's answer)*/
+input[type=radio] {
+    display:none;
+}
+
+input[type="radio"] + div {
+   height: 25px;
+   width: 25px;
+   display: inline-block;
+   background: #FFF;
+   border: 1px solid #d2d2d2;
+   border-radius: 100%;
+   margin:0px;
+}
+
+input[type="radio"]:checked + div {
+    background:#DFBFFF;
+    border: 1px solid #DFBFFF;
+}
+
+.input-group-addon {
+	background:#fff;
+	border:0px;
+}
+
+.form-control.option-input {
+	background:rgba(0,0,0,0.1);
+	border:0px;
+	outline:0px;
+}
+
+.form-control.question-input {
+	background:rgba(0,0,0,0.1);
+	border:0px;
+	outline:0px;
+	margin-top:8px;
+}
+
+.btn.submit-question {
+	background:#DFBFFF;
+	color:#fff;
+	border-radius: 8px;
+	font-size:16px;
+	padding: 10px 16px;
+}
+
+
+
