@@ -1,6 +1,6 @@
 tally.controller('mainController', function($scope, $route, $location, QuestionBank) {
 
-	$scope.questionBank = QuestionBank.custom();
+	$scope.questionBank = QuestionBank.all();
 
   $scope.question_index = 0;
   console.log($scope.questionBank.length);

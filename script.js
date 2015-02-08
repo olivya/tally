@@ -30,10 +30,14 @@ tally.config(function ($routeProvider,$locationProvider) {
 //Reference used for services:
 //https://fdietz.github.io/recipes-with-angular-js/controllers/sharing-code-between-controllers-using-services.html
 tally.factory("QuestionBank", function() {
-  var questionBank = [];
+  var questionBank = [{
+    question: 'This is Question 1', 
+    options: ['Option A','Option B','Option C','Option D'],
+    answer: 1
+  }];
   
   return {
-    custom: function() {
+    all: function() {
       return questionBank;
     },
   };

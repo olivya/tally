@@ -3,9 +3,24 @@
 }*/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,300italic,400);
+p{
+	font-size:21px;
+	font-weight:100;
+	text-align:center;
+}
 
+.panel {
+	border:0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0)
+}
+
+form { border: 0px; }
 #main {
 	margin-top: 2.5em;
+}
+
+.container {
+	margin-top:4.7em;
 }
 
 ul.nav-justified.top-nav {
@@ -37,31 +52,8 @@ ul.nav-justified.top-nav {
 
 body,h1,h2,.navbar-brand {
 	font-family:'Roboto', arial, sans-serif;
-
-}
-/*
-.navbar {
-	background-color:#fff;
-	border:none;
-	margin-top:2em;
 }
 
-.navbar li a {
-	font-size:1.5em;
-	font-weight: 100;
-
-}
-
-.navbar-right ul {
-	display:inline;
-}
-
-.navbar-brand {
-	font-size:3em;
-	font-weight: 100;
-	margin-top:-40px;
-}
-*/
 .ng-scope {
 	background-color: #fff;
 }
@@ -79,30 +71,47 @@ button {
 	font-weight: 300;
 }
 
-li {
-	list-style-type: none;
+ol {
+	list-style-type: upper-latin;
 }
 
 #currentQuestionList {
 	text-align:left;
+	font-size:21px;
+	font-weight:300;
+	list-style-type: none;
+	padding:0;
 }
 
 #currentQuestions {
-	font-weight:700;
+	/*font-weight:700;*/
+	padding:0;
 }
 
 #currentOptions {
-	display:inline;
-	list-style-type:none;
 	font-weight:300;
+	padding:0;
+	margin-left:25px;
 }
 
+#trashQuestion {
+	background:rgba(0,0,0,0);
+	border:none;
+	outline:none;
+	font-size:35px;
+	color:#FF3366;
+	margin-top:-5px;
+	padding-top:0px;
+	margin-left:0px;
+	padding-left:0px;
+}
 #optionsList {
 	text-align:left;
 }
 
 #optionsList label {
 	font-weight:100;
+	padding:0;
 }
 
 .nav-pills>li>a {
@@ -119,23 +128,8 @@ li {
 .nav-pills>li.active>a:focus
 {
 	background-color: #DFBFFF;
-	margin-right:10px;
-}
-
-@media screen and (max-width: 768px) {
-/*	.navbar li a {
-		text-align:center;
-	}*/
-}
-
-@media screen and (max-width: 450px) {
-/*	.nav-pills>li { 
-		width:100%;
-		text-align:center;
-	}
-	.nav>li>a {
-		text-align:center;
-	}*/
+	margin-right:5px;
+	margin-left:5px;
 }
 
 .nav-pills {
@@ -181,7 +175,21 @@ input[type="radio"]:checked + div {
 	background:rgba(0,0,0,0.1);
 	border:0px;
 	outline:0px;
-	margin-top:8px;
+	/*margin-right:8px;*/
+	width:100%;
+}
+
+.row.questions {
+	padding:0;
+}
+
+.col-lg-6 {
+	padding:0;
+}
+
+.input-group-addon {
+	padding:0;
+	padding-right:5px;
 }
 
 .btn.submit-question {
@@ -192,5 +200,27 @@ input[type="radio"]:checked + div {
 	padding: 10px 16px;
 }
 
+@media screen and (max-width: 768px) {
 
 
+@media screen and (max-width: 450px) {
+
+}
+
+.container.questions {
+	margin-top:10px;
+}
+.col-xs-10.questions {
+	/*background:pink;*/
+	padding:0;
+}
+
+.col-xs-2.questions {
+	/*background:lime;*/
+	padding:0;
+	text-align:right;
+}
+
+.container {
+	/*padding:0;*/
+}

@@ -1,24 +1,28 @@
-<div class="jumbotron text-center container">
+<div class="text-center container">
 
 	<section id="tabs">
 		<ul class="nav nav-pills text-center">
 			<li class="text-center" ng-class="{ active:tab === 1}">
-				<a href ng-click="selectTab(1)">1. Create<br/>Questions</a>
+				<a href ng-click="selectTab(1)">Create<br/>Questions</a>
 			</li>
 			<li class="text-center" ng-class="{ active:tab === 2}" ng-click="erase()">
-				<a href ng-click="selectTab(2)">2. Review<br/>Questions</a>
+				<a href ng-click="selectTab(2)">Review<br/>Questions</a>
 			</li>
 		</ul>
 	</section>
 
 	<div class="panel" ng-show="isSelected(1)"> 
 
-<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
+<div class="container questions">
+
+	<div class="row questions">
+		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
 			<input type="text"
 				placeholder="Question"
 				ng-model="newQuestion"
 				class="form-control question-input"
 				required/><p/>
+	</div>
 
 	<div class="row">
 	  <div class="col-lg-6">
@@ -90,79 +94,40 @@
 	  </div><p/>
 
 	</div>
-<input type="submit" class="btn submit-question" value="Submit"/> 
+	<input type="submit" class="btn submit-question" value="Submit"/> 
+	</form>
 
-		</form>
+</div>
 
-<!-- <div class="input-group">
-      <span class="input-group-addon">
-		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
-			<input type="text"
-				placeholder="Question"
-				ng-model="newQuestion"
-				class="form-control"
-				required/>
-			<ul>
-				<li>
-					<input type="radio"
-						ng-model="setAnswer"
-						value=0
-						name="options"
-						class="col-xs-1 col-md-4"
-						required>
-					<input type="text" ng-model="newOptionA" required
-					placeholder="Option A" class="col-xs-11 col-md-4"/><p/>
-				</li>
-
-				<li>
-					<input type="radio"
-						ng-model="setAnswer"
-						value=1
-						name="options"
-						required>
-					<input type="text" ng-model="newOptionB" required
-					placeholder="Option B" class="form-control options"/><p/>
-				</li>
-				
-				<li>
-					<input type="radio"
-						ng-model="setAnswer"
-						value=2
-						name="options"
-						required>
-					<input type="text" ng-model="newOptionC" required
-					placeholder="Option C" class="form-control options"/><p/>
-				</li>
-
-				<li>
-					<input type="radio"
-						ng-model="setAnswer"
-						value=3
-						name="options"
-						required>
-					<input type="text" ng-model="newOptionD" required
-					placeholder="Option D" class="form-control options"/><p/>
-				</li>
-			</ul> -->
-
-			<!-- <input type="submit" value="Submit"/> 
-
-		</form> -->
 	</span>
 </div>
  	</div>
 
  	<div class="panel" ng-show="isSelected(2)">
- 		<h4>Current Questions:</h4>
-		<ul id="currentQuestionList">
+ 		 <div ng-show="noQuestions">
+ 			<p>You haven't added any questions yet!</p>
+    		<p>Tap "Create Questions" above to get started.</p>
+    	</div>
+
+		<ul id="currentQuestionList" ng-hide="noQuestions">
 			<li id="currentQuestions" ng-repeat="q in questionBank track by $index">
-				{{q.question}}
-					<ul>
-						<li id="currentOptions" ng-repeat="option in q.options track by $index">
-							{{option}} <br/>
-						</li>
-					</ul>
-				<button ng-click="deleteQuestion($index)">Remove</button>
+				
+				<div class="container questions">
+					<div class="row questions">
+						<div class="col-xs-10 questions">
+							{{q.question}}
+						</div>
+						<div class="col-xs-2 questions">
+							<button id="trashQuestion" ng-click="deleteQuestion($index)"><i class="fa fa-trash"></i></button>	
+						</div>
+					</div>
+				</div>
+
+				<ol type="A">
+					<li id="currentOptions" ng-repeat="option in q.options track by $index">
+						{{option}}<br/>
+					</li>
+				</ol>
 			</li>
 		</ul>
 </div>

@@ -1,6 +1,6 @@
 tally.controller('questionsController', function($scope, QuestionBank) {
 	
-	$scope.questionBank = QuestionBank.custom();
+	$scope.questionBank = QuestionBank.all();
 	
 	//Shaping up with AngularJS Tutorial:
 	$scope.tab = 1;
@@ -35,6 +35,14 @@ tally.controller('questionsController', function($scope, QuestionBank) {
 		$scope.newOptionC = "";
 		$scope.newOptionD = "";
 		$scope.setAnswer = "";
+		console.log($scope.questionBank.length);
+
+		if ($scope.questionBank.length===0) {
+  			$scope.noQuestions = true;
+  		}
+  		else if ($scope.questionBank.length >= 1) {
+  			$scope.noQuestions = false;
+  		}
 	};
 
 	 $scope.deleteQuestion = function (i){ // i = $index from home.html
