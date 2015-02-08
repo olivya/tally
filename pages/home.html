@@ -16,22 +16,52 @@
 		<h4>Create Questions</h4> 
 		<form name="addQuestionForm" id="addQuestionForm">
 			Question:<br/><input type="text" ng-model="newQuestion"/><p/><br/>
-			A:<input type="text" ng-model="newOptionA"/><p/>
-			B:<input type="text" ng-model="newOptionB"/><p/>
-			C:<input type="text" ng-model="newOptionC"/><p/>
-			D:<input type="text" ng-model="newOptionD"/><p/>
-			<!-- <input type="text" ng-model="newOption2"/><br/> -->
+			
+			<ul>
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=0
+						name="options">
+					A:<input type="text" ng-model="newOptionA"/><p/>
+				</li>
+
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=1
+						name="options">
+					B:<input type="text" ng-model="newOptionB"/><p/>
+				</li>
+				
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=2
+						name="options">
+					C:<input type="text" ng-model="newOptionC"/><p/>
+				</li>
+
+				<li>
+					<input type="radio"
+						ng-model="setAnswer"
+						value=3
+						name="options">
+					D:<input type="text" ng-model="newOptionD"/><p/>
+				</li>
+			</ul>
+
 			<input type="submit" value="Submit" ng-click="addQuestion()"/> 
 		</form>
 
 		<h4>Current Questions:</h4>
 		<ul id="currentQuestionList">
-			<li id="currentQuestions" ng-repeat="q in questionBank">
+			<li id="currentQuestions" ng-repeat="q in questionBank track by $index">
 				{{q.question}}
 					<ul>
-						<li id="currentOptions" ng-repeat="option in q.options">
-							{{option}},
-						</li>
+						<li id="currentOptions" ng-repeat="option in q.options track by $index">
+							{{option}}
+						</li> <br/>
 					</ul>
 			</li>
 		</ul>
@@ -46,7 +76,7 @@
         	<div ng-if="question_index == $index">
             	{{q.question}}
 					<ul>
-						<li id="optionsList" ng-repeat="option in q.options">		
+						<li id="optionsList" ng-repeat="option in q.options track by $index">		
 							<label>
 							<input 	type="radio"
 									ng-model="userInput.answer"

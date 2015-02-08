@@ -52,10 +52,14 @@ tally.controller('mainController', function($scope) {
 				options:[ $scope.newOptionA,
 						  $scope.newOptionB,
 						  $scope.newOptionC,
-						  $scope.newOptionD ]
+						  $scope.newOptionD ],
+				answer:$scope.setAnswer
 			});
 		$scope.newQuestion = "";
-		$scope.newOption = "";
+		$scope.newOptionA = "";
+		$scope.newOptionB = "";
+		$scope.newOptionC = "";
+		$scope.newOptionD = "";
 	}
 
 	$scope.userInput = {};
@@ -80,4 +84,3 @@ tally.controller('mainController', function($scope) {
     	$scope.userCorrect = false;
     };
 });
-
