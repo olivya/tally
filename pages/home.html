@@ -13,43 +13,47 @@
 
 	<div class="panel" ng-show="isSelected(1)"> 
 		<h4>Create Questions</h4> 
-		<form name="addQuestionForm" id="addQuestionForm">
-			Question:<br/><input type="text" ng-model="newQuestion"/><p/><br/>
+		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
+			Question:<br/><input type="text" ng-model="newQuestion" required/><p/><br/>
 			<ul>
 				<li>
 					<input type="radio"
 						ng-model="setAnswer"
 						value=0
-						name="options">
-					A:<input type="text" ng-model="newOptionA"/><p/>
+						name="options"
+						required>
+					A:<input type="text" ng-model="newOptionA" required/><p/>
 				</li>
 
 				<li>
 					<input type="radio"
 						ng-model="setAnswer"
 						value=1
-						name="options">
-					B:<input type="text" ng-model="newOptionB"/><p/>
+						name="options"
+						required>
+					B:<input type="text" ng-model="newOptionB" required/><p/>
 				</li>
 				
 				<li>
 					<input type="radio"
 						ng-model="setAnswer"
 						value=2
-						name="options">
-					C:<input type="text" ng-model="newOptionC"/><p/>
+						name="options"
+						required>
+					C:<input type="text" ng-model="newOptionC" required/><p/>
 				</li>
 
 				<li>
 					<input type="radio"
 						ng-model="setAnswer"
 						value=3
-						name="options">
-					D:<input type="text" ng-model="newOptionD"/><p/>
+						name="options"
+						required>
+					D:<input type="text" ng-model="newOptionD" required/><p/>
 				</li>
 			</ul>
 
-			<input type="submit" value="Submit" ng-click="addQuestion()"/> 
+			<input type="submit" value="Submit"/> 
 		</form>
  	</div>
 
