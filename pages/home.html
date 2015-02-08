@@ -13,6 +13,7 @@
 
 	<div class="panel" ng-show="isSelected(1)"> 
 		<h4>Create Questions</h4> 
+
 		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
 			Question:<br/><input type="text" ng-model="newQuestion" required/><p/><br/>
 			<ul>
@@ -65,8 +66,9 @@
 					<ul>
 						<li id="currentOptions" ng-repeat="option in q.options track by $index">
 							{{option}} <br/>
-						</li> <br/>
+						</li>
 					</ul>
+				<button ng-click="deleteQuestion($index)">Remove</button>
 			</li>
 		</ul>
 </div>

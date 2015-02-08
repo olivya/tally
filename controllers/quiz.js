@@ -1,6 +1,24 @@
-tally.controller('quizController', function($scope, $route, QuestionBank) {
+tally.controller('quizController', function($scope, $route, $location, QuestionBank) {
 
-  $scope.questionBank = QuestionBank.all();
+	$scope.questionBank = QuestionBank.custom();
+
+// subject stuff:
+  // $scope.location = $location;
+
+  // console.log($location.path());
+
+  // //determine which question bank to pull
+  // if ($location.path() === "/quiz/custom") {
+  // 	$scope.questionBank = QuestionBank.custom();
+  // } 
+  // else if ($location.path() === "/quiz/biology") {
+  // 	$scope.questionBank = QuestionBank.biology();
+  // }
+  // else if ($location.path() === "/quiz/history") {
+  // 	$scope.questionBank = QuestionBank.history();
+  // }
+  // else $scope.questionBank = QuestionBank.custom();
+
   $scope.question_index = 0;
 
       $scope.next = function () {

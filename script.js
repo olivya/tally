@@ -1,7 +1,7 @@
 var tally = angular.module('tally', ['ngRoute']);
 
 //ROUTING
-tally.config(function ($routeProvider) {
+tally.config(function ($routeProvider,$locationProvider) {
     $routeProvider
 
     .when('/', {
@@ -9,7 +9,8 @@ tally.config(function ($routeProvider) {
         controller  : 'mainController'
     })
 
-    .when('/quiz/', {
+    // .when('/quiz/:subject', {
+     .when('/quiz', {
         templateUrl : 'pages/quiz.html',
         controller  : 'quizController'
     })
@@ -22,11 +23,6 @@ tally.config(function ($routeProvider) {
     .when('/settings', {
         templateUrl : 'pages/settings.html',
         controller  : 'settingsController'
-    })
-
-    .when('/results', {
-        templateUrl : 'pages/results.html',
-        controller  : 'resultsController'
     })
 
     .otherwise({ redirectTo: '/' });
@@ -52,9 +48,75 @@ tally.factory("QuestionBank", function() {
     }
     ];
 
+    //subjects stuff
+    // var biologyQuestions = [{
+    //   question: 'Biology Question 1',
+    //   options: ['B','bio THIS','B','B'],
+    //   answer: 1
+    // },
+    // {
+    //   question: 'Biology Question 2',
+    //   options: ['bio Not me.','bio Wrong','bio Pick me! :D','bio Nope'],
+    //   answer: 2
+    // },
+    // {
+    //   question: 'Biology Question 3',
+    //   options: ['bio Wrong','bio Nope','bio Not me.','bio Pick me! :D'],
+    //   answer: 3
+    // }
+    // ];
+
+    // var historyQuestions = [{
+    //   question: 'History Question 1',
+    //   options: ['B','hist THIS','B','B'],
+    //   answer: 1
+    // },
+    // {
+    //   question: 'History Question 2',
+    //   options: ['hist Not me.','bio Wrong','bio Pick me! :D','bio Nope'],
+    //   answer: 2
+    // },
+    // {
+    //   question: 'HistoryQuestion 3',
+    //   options: ['hist Wrong','bio Nope','bio Not me.','bio Pick me! :D'],
+    //   answer: 3
+    // }
+    // ];
+
   return {
-    all: function() {
+    custom: function() {
       return questionBank;
     },
+    // biology: function() {
+    //   return biologyQuestions;
+    // },
+    // history: function() {
+    //   return historyQuestions;
+    // },
   };
 });
+
+// tally.factory("BiologyQuestions", function() {
+//   var biologyQuestions = [{
+//       question: 'Biology Question 1',
+//       options: ['B','bio THIS','B','B'],
+//       answer: 1
+//     },
+//     {
+//       question: 'Biology Question 2',
+//       options: ['bio Not me.','bio Wrong','bio Pick me! :D','bio Nope'],
+//       answer: 2
+//     },
+//     {
+//       question: 'Biology Question 3',
+//       options: ['bio Wrong','bio Nope','bio Not me.','bio Pick me! :D'],
+//       answer: 3
+//     }
+//     ];
+
+//   return {
+//     all: function() {
+//       return biologyQuestions;
+//     },
+//   };
+// });

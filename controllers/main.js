@@ -1,6 +1,6 @@
 tally.controller('mainController', function($scope, QuestionBank) {
 	
-	$scope.questionBank = QuestionBank.all();
+	$scope.questionBank = QuestionBank.custom();
 
 	//Shaping up with AngularJS Tutorial:
 	$scope.tab = 1;
@@ -28,11 +28,16 @@ tally.controller('mainController', function($scope, QuestionBank) {
 						  $scope.newOptionD ],
 				answer:$scope.setAnswer
 			});
+
 		$scope.newQuestion = "";
 		$scope.newOptionA = "";
 		$scope.newOptionB = "";
 		$scope.newOptionC = "";
 		$scope.newOptionD = "";
 		$scope.setAnswer = "";
-	}
+	};
+
+	 $scope.deleteQuestion = function (i){ // i = $index from home.html
+    	$scope.questionBank.splice(i,1);
+    };
 });
