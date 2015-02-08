@@ -1,15 +1,37 @@
-tally.controller('quizController', function($scope, $route) {
-  var questions = [];
-  
-  //console.log($route);
+tally.controller('quizController', function($scope, $route, QuestionBank) {
 
-  //to access & display question data??
-  var question = $route.current.params.question;
-  $scope.question = questions[question];
+  $scope.questionBank = QuestionBank.all();
+  $scope.question_index = 0;
 
-  $scope.user = { answer: "" };
+      $scope.next = function () {
+        if ($scope.question_index >= $scope.questionBank.length - 1) {
+            $scope.question_index = 0;
+        } else {
+            $scope.question_index++;
+        }
+        $scope.userInput = {};
+    };
 
-  //adds 1 to current question index to move to next question in line
-  $scope.nextQuestion = parseInt($route.current.params.question) + 1;
+	$scope.userInput = {};
 
+	$scope.check = function () {
+    	//$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
+    	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
+    	// console.log($scope.correctAnswer);
+    	// console.log($scope.userInput);
+
+    	if ($scope.correctAnswer == $scope.userInput.answer){
+    		$scope.userCorrect = true;
+    		$scope.userWrong= false;
+    	}
+    	else {
+    		$scope.userWrong = true;
+    		$scope.userCorrect = false;
+    	}
+    };
+
+    $scope.erase = function (){
+    	$scope.userWrong= false;
+    	$scope.userCorrect = false;
+    };
 });

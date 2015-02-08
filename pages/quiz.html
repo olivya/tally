@@ -1,32 +1,23 @@
 <div class="jumbotron text-center">
-
-
-
-
-	<h1>Question #{{$index + 1}}:</h1>
-	
-	<p>{{ question.question }}</p>
-	<!-- <p>{{ question.answer }}</p> -->
-	<ul id="options">
-		<li ng-repeat="option in question.options">
-			<label>
-				<!-- <input type="radio" name="answer" value="{{option}}" ng-class="{ active:answered }"> -->
-				 <input type="radio"
-			          ng-model="user.answer"
-			          ng-value="option"
-			          id="{{option}}"
-			          name="answer">
-				{{option}}
-			</label>
-		</li>
-	</ul>
-	<div>You chose {{user.answer}}</div>
-	<div>Correct answer is {{question.correctAnswer}}</div>
-	<a href="#quiz/{{nextQuestion}}" ng-click="checkAns">Next</a>
-
-<!-- 	{{question}}<br/>
-	{{question.question}}<br/>
-	{{question.options}}<br/> -->
-	<a href="#">Back</a><br/>
-	
+	<div ng-repeat="q in questionBank">
+    	<div ng-if="question_index == $index">
+        	{{q.question}}
+				<ul>
+					<li id="optionsList" ng-repeat="option in q.options track by $index">		
+						<label>
+						<input 	type="radio"
+								ng-model="userInput.answer"
+								value="{{ $index }}"
+								name="answer"
+								ng-click="erase()">
+						{{option}} 
+						</label>
+					</li>
+				</ul>
+			<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
+			<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
+			<button ng-click="check()">Check answer</button>
+    	</div>
+	</div>
+    <button ng-click="next();erase()">Next</button>
 </div>

@@ -1,5 +1,4 @@
 <div class="jumbotron text-center">
-	<!-- <p>{{ message }}</p> -->
 
 	<section id="tabs">
 		<ul class="nav nav-pills text-center">
@@ -7,7 +6,7 @@
 				<a href ng-click="selectTab(1)">1. Create Questions</a>
 			</li>
 			<li class="text-center" ng-class="{ active:tab === 2}" ng-click="erase()">
-				<a href ng-click="selectTab(2)">2. Quiz Yourself!</a>
+				<a href ng-click="selectTab(2)">2. Review Questions</a>
 			</li>
 		</ul>
 	</section>
@@ -16,7 +15,6 @@
 		<h4>Create Questions</h4> 
 		<form name="addQuestionForm" id="addQuestionForm">
 			Question:<br/><input type="text" ng-model="newQuestion"/><p/><br/>
-			
 			<ul>
 				<li>
 					<input type="radio"
@@ -53,8 +51,10 @@
 
 			<input type="submit" value="Submit" ng-click="addQuestion()"/> 
 		</form>
+ 	</div>
 
-		<h4>Current Questions:</h4>
+ 	<div class="panel" ng-show="isSelected(2)">
+ 		<h4>Current Questions:</h4>
 		<ul id="currentQuestionList">
 			<li id="currentQuestions" ng-repeat="q in questionBank track by $index">
 				{{q.question}}
@@ -65,37 +65,4 @@
 					</ul>
 			</li>
 		</ul>
- 	</div>
-
- 	<div class="panel" ng-show="isSelected(2)">
-		<!-- <h4>Quiz yourself!</h4>  -->
-		<!-- <a href="" ng-click="">Start!</a> -->
-
-<!-- Referenced Rob's answer https://stackoverflow.com/questions/25087576/angularjs-ng-repeat-show-one-item-at-a-time for logic (http://jsfiddle.net/c6RZK/) for cycling through questions-->
-		<div ng-repeat="q in questionBank">
-        	<div ng-if="question_index == $index">
-            	{{q.question}}
-					<ul>
-						<li id="optionsList" ng-repeat="option in q.options track by $index">		
-							<label>
-							<input 	type="radio"
-									ng-model="userInput.answer"
-									value="{{ $index }}"
-									name="answer"
-									ng-click="erase()">
-							{{option}} 
-							</label>
-						</li>
-					</ul>
-
-					<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
-    				<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
-
-					<button ng-click="check()">Check answer</button>
-					<br/>
-        	</div>
-    	</div>
-
-    	<button ng-click="next();erase()">Next</button>
- 	</div>
 </div>
