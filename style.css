@@ -105,18 +105,20 @@ li {
 	font-weight:100;
 }
 
-#addQuestionForm{
-	margin-top:-30px;
-}
-
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
-{
-	background-color: #21debe;
-}
-
 .nav-pills>li>a {
-	color: #21debe;
+	color: #DFBFFF;
+	border: 2px solid #DFBFFF;
+ 	border-radius: 8px 8px 8px 8px;
 }
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus
+{
+	background-color: #DFBFFF;
+	margin-right:10px;
+}
+
 @media screen and (max-width: 768px) {
 /*	.navbar li a {
 		text-align:center;
@@ -133,4 +135,8 @@ li {
 	}*/
 }
 
-
+.nav-pills {
+	font-size:16px;
+	display:inline-block;
+	font-weight: 300;
+}
