@@ -60,7 +60,7 @@
 				{{q.question}}
 					<ul>
 						<li id="currentOptions" ng-repeat="option in q.options track by $index">
-							{{option}}
+							{{option}} <br/>
 						</li> <br/>
 					</ul>
 			</li>
@@ -80,10 +80,10 @@
 							<label>
 							<input 	type="radio"
 									ng-model="userInput.answer"
-									value="{{ option }}"
+									value="{{ $index }}"
 									name="answer"
 									ng-click="erase()">
-							{{option}}
+							{{option}} 
 							</label>
 						</li>
 					</ul>

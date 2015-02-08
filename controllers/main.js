@@ -17,7 +17,7 @@ tally.controller('mainController', function($scope) {
 
 	$scope.questionBank = [{
 	  question: 'This is Question 1',
-	  options: ['Nope','Pick me! :D','Wrong','Not me.'],
+	  options: ['B','B','B','B'],
 	  answer: 1
 	},
 	{
@@ -60,14 +60,16 @@ tally.controller('mainController', function($scope) {
 		$scope.newOptionB = "";
 		$scope.newOptionC = "";
 		$scope.newOptionD = "";
+		$scope.setAnswer = "";
 	}
 
 	$scope.userInput = {};
 
 	$scope.check = function () {
-    	$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
-    	// console.log($scope.correctAnswer);
-    	// console.log($scope.userInput);
+    	//$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
+    	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
+    	console.log($scope.correctAnswer);
+    	console.log($scope.userInput);
 
     	if ($scope.correctAnswer == $scope.userInput.answer){
     		$scope.userCorrect = true;
