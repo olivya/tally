@@ -2,23 +2,6 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
 
 	$scope.questionBank = QuestionBank.custom();
 
-// subject stuff:
-  // $scope.location = $location;
-
-  // console.log($location.path());
-
-  // //determine which question bank to pull
-  // if ($location.path() === "/quiz/custom") {
-  // 	$scope.questionBank = QuestionBank.custom();
-  // } 
-  // else if ($location.path() === "/quiz/biology") {
-  // 	$scope.questionBank = QuestionBank.biology();
-  // }
-  // else if ($location.path() === "/quiz/history") {
-  // 	$scope.questionBank = QuestionBank.history();
-  // }
-  // else $scope.questionBank = QuestionBank.custom();
-
   $scope.question_index = 0;
   console.log($scope.questionBank.length);
 
@@ -41,10 +24,7 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
 	$scope.userInput = {};
 
 	$scope.check = function () {
-    	//$scope.correctAnswer = $scope.questionBank[$scope.question_index].options[$scope.questionBank[$scope.question_index].answer];
     	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
-    	// console.log($scope.correctAnswer);
-    	// console.log($scope.userInput);
 
     	if ($scope.correctAnswer == $scope.userInput.answer){
     		$scope.userCorrect = true;

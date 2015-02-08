@@ -1,4 +1,4 @@
-tally.controller('quizController', function($scope, QuestionBank) {
+tally.controller('questionsController', function($scope, QuestionBank) {
 	
 	$scope.questionBank = QuestionBank.custom();
 	
