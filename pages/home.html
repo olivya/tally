@@ -15,8 +15,11 @@
 	<div class="panel" ng-show="isSelected(1)"> 
 		<h4>Create Questions</h4> 
 		<form name="addQuestionForm" id="addQuestionForm">
-			Question:<br/><input type="text" ng-model="newQuestion"/><p/>
-			Options:<br/><input type="text" ng-model="newOption"/><p/>
+			Question:<br/><input type="text" ng-model="newQuestion"/><p/><br/>
+			A:<input type="text" ng-model="newOptionA"/><p/>
+			B:<input type="text" ng-model="newOptionB"/><p/>
+			C:<input type="text" ng-model="newOptionC"/><p/>
+			D:<input type="text" ng-model="newOptionD"/><p/>
 			<!-- <input type="text" ng-model="newOption2"/><br/> -->
 			<input type="submit" value="Submit" ng-click="addQuestion()"/> 
 		</form>

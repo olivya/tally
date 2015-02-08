@@ -48,7 +48,11 @@ tally.controller('mainController', function($scope) {
 		$scope.questionBank.push(
 			{
 				question:$scope.newQuestion,
-				options:$scope.newOption
+				//populate options:
+				options:[ $scope.newOptionA,
+						  $scope.newOptionB,
+						  $scope.newOptionC,
+						  $scope.newOptionD ]
 			});
 		$scope.newQuestion = "";
 		$scope.newOption = "";
