@@ -63,6 +63,8 @@ tally.controller('questionsController', function($scope, QuestionBank) {
 	// };
 
 	 $scope.deleteQuestion = function (i){ // i = $index from home.html
-    	$scope.questionBank.splice(i,1);
+    	if (confirm("Are you sure you want to delete this question?") == true) {
+    		$scope.questionBank.splice(i,1);
+    	}
     };
 });
