@@ -1,5 +1,7 @@
 tally.controller('helpController', function($scope,$location,QuestionBank) {
-	$scope.message = 'List of help pertaining to different question banks will go here!';
+	$scope.message = 'Tally is a fully-customizable quiz app. You can cycle through questions perpetually, at your discretion. This is for help with memory retention, similar to flashcards.';
+	$scope.edit = 'Tap this icon to add, review, and/or delete questions.';
+	$scope.quiz = 'When you\'re ready, tap this icon to take your quiz!';
 	$scope.location = $location.path();
 
 

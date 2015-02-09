@@ -9,6 +9,10 @@ p{
 	text-align:center;
 }
 
+p.help i {
+	font-size:3em;
+}
+
 .panel {
 	border:0px;
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0)
@@ -298,6 +302,8 @@ textarea {
 
 .container.questions {
 	margin-top:10px;
+	margin-left:20px;
+	margin-right:20px;
 }
 .col-xs-10.questions {
 	/*background:pink;*/

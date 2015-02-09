@@ -15,6 +15,8 @@
 
 	<div class="panel" ng-show="isSelected(1)"> 
 
+	<p>Fill in your question and options, and select which option is the correct answer on the left.</p>
+
 	<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()" novalidate>
 			<!-- <input type="text" -->
 			<textarea rows="2"
@@ -95,8 +97,6 @@
 	<input type="submit" class="btn submit-question" value="Submit"/> 
 </form>
 
-
-<p ng-show="errorMessageTriggered">Please complete all fields, including selecting whch of your answers is correct!</p>
 </div>
 
 	</span>
@@ -105,7 +105,7 @@
 
  	<div class="panel" ng-show="isSelected(2)">
  		 <div ng-show="noQuestions">
- 			<p>You haven't added any questions yet!</p>
+ 			<p>You don't have any questions!</p>
     		<p>Tap "Create Questions" above to get started.</p>
     	</div>
 

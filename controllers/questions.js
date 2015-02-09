@@ -3,13 +3,9 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 	$scope.questionBank = QuestionBank.all();
 
 	$scope.location = $location.path();
-	$scope.red = 'red'
-  $scope.white = 'white'
-  
-	if ($scope.location === '/questions') {
-		$scope.questionsActive = true;
-	}
-	else $scope.questionsActive = false;
+	
+	$scope.noQuestions = true;
+
 
 	console.log($scope.questionsActive);
 
@@ -60,7 +56,7 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 				}
 			}
 		else {
-			alert("Please complete all fields");
+			alert("Please complete all fields, including selecting on the left which of your answers is correct!");
 		}
 	};
 
@@ -78,6 +74,13 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 	 $scope.deleteQuestion = function (i){ // i = $index from home.html
     	if (confirm("Are you sure you want to delete this question?") == true) {
     		$scope.questionBank.splice(i,1);
+
+    		if ($scope.questionBank.length===0) {
+					$scope.noQuestions = true;
+				}
+			else if ($scope.questionBank.length >= 1) {
+					$scope.noQuestions = false;
+				}
     	}
     };
 });
