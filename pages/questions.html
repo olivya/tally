@@ -13,16 +13,13 @@
 
 	<div class="panel" ng-show="isSelected(1)"> 
 
-<div class="container questions">
-
-	<div class="row questions">
-		<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
+	<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()">
 			<input type="text"
 				placeholder="Question"
 				ng-model="newQuestion"
 				class="form-control question-input"
 				required/><p/>
-	</div>
+
 
 	<div class="row">
 	  <div class="col-lg-6">
@@ -92,11 +89,12 @@
 	      <input type="text" ng-model="newOptionD" required placeholder="Option D" class="form-control option-input"/><p/>
 	    </div>
 	  </div><p/>
-
 	</div>
 	<input type="submit" class="btn submit-question" value="Submit"/> 
-	</form>
+</form>
 
+
+<p ng-show="errorMessageTriggered">Please complete all fields</p>
 </div>
 
 	</span>
