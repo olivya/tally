@@ -380,7 +380,12 @@ https://daneden.github.io/animate.css/
 }
 
 #check {
-	color:#45EBC2;;
+	color:#45EBC2;
+}
+
+#check2 {
+	color:#45EBC2;
+	font-size:2em;
 }
 
 #x { color:#FF3366; }

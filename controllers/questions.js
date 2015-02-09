@@ -1,15 +1,15 @@
-tally.controller('questionsController', function($scope, QuestionBank, $location) {
+tally.controller('questionsController', function($scope, QuestionBank, $location,$timeout) {
 	
 	$scope.questionBank = QuestionBank.all();
 
-	$scope.location = $location.path();
+	if ($scope.questionBank.length === 0) {
+		$scope.noQuestions = true;
+	}
+	else $scope.noQuestions = false;
 	
-	$scope.noQuestions = true;
+	$scope.location = $location.path();
 
-
-	console.log($scope.questionsActive);
-
-	//Shaping up with AngularJS Tutorial:
+	//Referenced "Shaping up with AngularJS Tutorial' for tabs:
 	$scope.tab = 1;
 
 	//switches current tab when new one is clicked
@@ -51,7 +51,7 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 			if ($scope.questionBank.length===0) {
 					$scope.noQuestions = true;
 				}
-			else if ($scope.questionBank.length >= 1) {
+			else if ($scope.questionBank.length > 0) {
 					$scope.noQuestions = false;
 				}
 			}
@@ -78,9 +78,17 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
     		if ($scope.questionBank.length===0) {
 					$scope.noQuestions = true;
 				}
-			else if ($scope.questionBank.length >= 1) {
+			else if ($scope.questionBank.length > 0) {
 					$scope.noQuestions = false;
 				}
     	}
     };
+
+    $scope.confirm = function() {
+      $scope.showMessage = true;
+      $timeout(function() {
+          $scope.showMessage = false;
+          }, 2000);
+    };
+
 });
