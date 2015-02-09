@@ -14,11 +14,12 @@
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 
   <script type="text/javascript" src="script.js"></script>
   <script src="controllers/main.js"></script>
   <script src="controllers/questions.js"></script>
-  <script src="controllers/settings.js"></script>
+  <!-- <script src="controllers/settings.js"></script> -->
   <script src="controllers/help.js"></script>
 
   <link rel="stylesheet" href="style.css" />
@@ -31,10 +32,20 @@
   <header>
     <nav class="navbar-fixed-top">
       <ul class="nav-justified top-nav">
-        <li><a href="#/"><i class="fa fa-graduation-cap"></i></a></li>
-        <li><a href="#questions"><i class="fa fa-edit"></i></a></li>
-        <li><a href="#settings"><i class="fa fa-gear"></i></a></li>
-        <li><a href="#help"><i class="fa fa-question-circle"></i></a></li>
+
+        <div class="row nav">
+          <div class="col-xs-4 navIcons">
+            <li><a href="#/"><i class="fa fa-graduation-cap"></i></a></li>
+          </div>
+          <div class="col-xs-4 navIcons">
+            <li><a href="#questions"><i class="fa fa-edit"></i></a></li>
+          </div>
+            <!-- <li><a href="#settings"><i class="fa fa-gear"></i></a></li> -->
+          <div class="col-xs-4 navIcons"> 
+            <li><a href="#help"><i class="fa fa-question-circle"></i></a></li>
+          </div>
+        </div>
+
     </ul>
   </nav>
     </header>

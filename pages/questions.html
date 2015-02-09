@@ -5,11 +5,13 @@
 			<li class="text-center" ng-class="{ active:tab === 1}">
 				<a href ng-click="selectTab(1)">Create<br/>Questions</a>
 			</li>
-			<li class="text-center" ng-class="{ active:tab === 2}" ng-click="erase()">
+			<li class="text-center" ng-class="{ active:tab === 2 }" ng-click="erase()">
 				<a href ng-click="selectTab(2)">Review<br/>Questions</a>
 			</li>
 		</ul>
 	</section>
+
+	<!-- {{location}} -->
 
 	<div class="panel" ng-show="isSelected(1)"> 
 
@@ -20,7 +22,6 @@
 				ng-model="newQuestion"
 				class="form-control question-input"
 				required><p/></textarea>
-
 
 	<div class="row">
 	  <div class="col-lg-6">
@@ -33,7 +34,7 @@
 					name="options"
 					class="radio"
 					required>
-				<div></div>
+				<span class="radioButtons"></span><div></div>
 			</label>
 	      </span>
 	      	<input type="text" ng-model="newOptionA" required placeholder="Option A" class="form-control option-input"/><p/>
@@ -50,7 +51,7 @@
 				name="options"
 				class="radio"
 				required>
-				<div></div>
+				<span class="radioButtons"></span><div></div>
 			</label>
 	      </span>
 	      <input type="text" ng-model="newOptionB" required placeholder="Option B" class="form-control option-input"/><p/>
@@ -67,7 +68,7 @@
 				name="options"
 				class="radio"
 				required>
-				<div></div>
+				<span class="radioButtons"></span><div></div>
 			</label>
 	      </span>
 	      <input type="text" ng-model="newOptionC" required placeholder="Option C" class="form-control option-input"/><p/>
@@ -84,7 +85,7 @@
 				name="options"
 				class="radio"
 				required>
-				<div></div>
+				<span class="radioButtons"></span><div></div>
 			</label>
 	      </span>
 	      <input type="text" ng-model="newOptionD" required placeholder="Option D" class="form-control option-input"/><p/>

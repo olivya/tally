@@ -6,8 +6,10 @@
 			then come back to this page to quiz yourself!</p>
 	</div>
 
+	<!-- {{location}} -->
+
 	<div id="quiz" ng-repeat="q in questionBank">
-		<div ng-if="question_index == $index">
+		<div ng-show="question_index == $index" class="quizAnim">
 	    	<span id="quizQuestion">{{q.question}}</span>
 				<ul id="optionsList">
 					<li ng-repeat="option in q.options track by $index">		
@@ -17,20 +19,19 @@
 								value="{{ $index }}"
 								name="answer"
 								ng-click="erase()">
+						<span class="radioButtons2"></span>
 						{{option}} 
 						</label>
 					</li> 
 				</ul>
-			<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
-			<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row quizQs">
 
 		<div class="col-xs-3 quiz1">
 			<div ng-hide="questionBank.length < 1">
-				<button id="backButton"ng-click="next();erase()">
+				<button id="backButton"ng-click="back();erase()">
 					<i class="fa fa-arrow-circle-left"></i>
 				</button>
 			</div>
@@ -49,5 +50,7 @@
 		</div>
 	</div>
 
+	<div class="correct" ng-show="userCorrect"><i id="check" class="fa fa-check"></i>Correct!</div>
+	<div class="incorrect" ng-show="userWrong"><i id="x" class="fa fa-times"></i>Try again!</div>
 </div>
 

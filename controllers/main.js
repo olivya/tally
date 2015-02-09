@@ -1,5 +1,9 @@
 tally.controller('mainController', function($scope, $route, $location, QuestionBank) {
 
+  $scope.location = $location.path();
+  $scope.red = 'red'
+  $scope.white = 'white'
+
 	$scope.questionBank = QuestionBank.all();
 
   $scope.question_index = 0;
@@ -17,6 +21,15 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
             $scope.question_index = 0;
         } else {
             $scope.question_index++;
+        }
+        $scope.userInput = {};
+    };
+
+      $scope.back = function () {
+        if ($scope.question_index === 0) {
+            $scope.question_index = $scope.questionBank.length - 1;
+        } else {
+            $scope.question_index--;
         }
         $scope.userInput = {};
     };

@@ -39,6 +39,7 @@ ul.nav-justified.top-nav {
 
 .top-nav li a {
 	color:#fff;
+	opacity:0.5;
 }
 
 .top-nav {
@@ -110,14 +111,15 @@ ol {
 	text-align:left;
 	padding:0;
 	margin:0;
-	margin-top:10px;
-	margin-bottom:5px;
 	list-style-type: none;
 }
-
+label.ng-binding {
+	margin-top:15px;
+	margin-bottom:15px;
+}
 #quiz {
 	font-size:21px;
-	background:yellow;
+	/*background:yellow;*/
 }
 
 #quizQuestion {
@@ -138,8 +140,8 @@ ol {
 	border: 2px solid #DFBFFF;
  	border-radius: 8px 8px 8px 8px;
  	line-height: 20px;
- 	padding-left:30px;
- 	padding-right:30px;
+ 	padding-left:20px;
+ 	padding-right:20px;
 }
 
 .nav-pills>li.active>a,
@@ -157,28 +159,7 @@ ol {
 	font-weight: 300;
 }
 
-/*Reference for styling radio buttons:
-https://stackoverflow.com/questions/4516217/make-radio-button-bigger
-(Cas Bloem's answer)*/
-/*input[type=radio] {
-    display:none;
-}
 
-input[type="radio"] + div {
-   height: 25px;
-   width: 25px;
-   display: inline-block;
-   background: #FFF;
-   border: 1px solid #d2d2d2;
-   border-radius: 100%;
-   margin:0px;
-}
-
-input[type="radio"]:checked + div {
-    background:#DFBFFF;
-    border: 1px solid #DFBFFF;
-}
-*/
 .input-group-addon {
 	background:#fff;
 	border:0px;
@@ -299,8 +280,6 @@ textarea {
 	margin:0;
 	padding:0;
 	margin-top:15px;
-	height:100px;
-	height:200px;
 }
 
 .col-xs-3.quiz3{
@@ -334,3 +313,75 @@ textarea {
 .container {
 	/*padding:0;*/
 }
+
+/*Reference for styling radio buttons:
+https://stackoverflow.com/questions/4516217/make-radio-button-bigger
+(Cas Bloem's answer)*/
+input[type=radio] {
+	opacity:0; /*hide original buttons*/
+}
+/*style new ones*/
+input[type=radio] + span {
+   display: inline-block;
+   background: #FFF;
+   border: 1px solid #000;
+   border-radius: 100%;
+   margin:0px;
+}
+input[type=radio]:checked + span {
+    background:#DFBFFF;
+    border: 1px solid #DFBFFF;
+}
+.radioButtons {
+    width: 2em;
+    height: 2em;
+}
+.radioButtons2 {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+/*End reference for radio buttons*/
+
+/*.ng-leave {
+	transition:0.75s;
+	opacity:1;
+}
+.ng-leave-active {
+	opacity:0;
+}
+
+.ng-enter{
+	transition:0.75s;
+	opacity:1;
+}
+.ng-enter-active {
+	opacity:0;
+}*/
+
+/*.ng-hide-add {
+    -webkit-animation: animation:0.5s lightSpeedOut ease;
+    display: block !important;
+}*/
+
+.panel.ng-hide-remove {
+    -webkit-animation:0.5s fadeInRight ease;
+}
+
+.quizAnim.ng-hide-remove {
+    -webkit-animation:0.5s fadeInRight ease;
+}
+ 
+.correct,
+.incorrect {
+	font-size:21px;
+	font-weight:100;
+	text-align:center;
+	margin-left:-30px;
+}
+
+#check {
+	color:#45EBC2;;
+}
+
+#x { color:#FF3366; }

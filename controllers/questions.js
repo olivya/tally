@@ -1,7 +1,18 @@
-tally.controller('questionsController', function($scope, QuestionBank) {
+tally.controller('questionsController', function($scope, QuestionBank, $location) {
 	
 	$scope.questionBank = QuestionBank.all();
-	
+
+	$scope.location = $location.path();
+	$scope.red = 'red'
+  $scope.white = 'white'
+  
+	if ($scope.location === '/questions') {
+		$scope.questionsActive = true;
+	}
+	else $scope.questionsActive = false;
+
+	console.log($scope.questionsActive);
+
 	//Shaping up with AngularJS Tutorial:
 	$scope.tab = 1;
 
@@ -33,7 +44,7 @@ tally.controller('questionsController', function($scope, QuestionBank) {
 				});
 
 			console.log($scope.setAnswer);
-			
+
 			$scope.newQuestion = "";
 			$scope.newOptionA = "";
 			$scope.newOptionB = "";
