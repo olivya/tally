@@ -105,8 +105,27 @@ ol {
 	margin-left:0px;
 	padding-left:0px;
 }
+
 #optionsList {
 	text-align:left;
+	padding:0;
+	margin:0;
+	margin-top:10px;
+	margin-bottom:5px;
+	list-style-type: none;
+}
+
+#quiz {
+	font-size:21px;
+	background:yellow;
+}
+
+#quizQuestion {
+	text-align:left;
+	padding:0;
+	margin:0;
+	font-weight:300;
+	/*background:lime;*/
 }
 
 #optionsList label {
@@ -213,6 +232,64 @@ input[type="radio"]:checked + div {
 	border-radius: 8px;
 	font-size:16px;
 	padding: 10px 16px;
+}
+
+
+.btn.check-answer {
+	background:#45EBC2;
+	color:#fff;
+	border-radius: 8px;
+	font-size:18px;
+	padding: 10px 16px;
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#nextButton {
+	background:rgba(0,0,0,0);
+	border:none;
+	outline:none;
+	font-size:60px;
+	color:#ccc;
+	margin-top:-5px;
+	padding-top:0px;
+	margin-left:0px;
+	padding-left:0px;
+	float:right;
+}
+
+#backButton {
+	background:rgba(0,0,0,0);
+	border:none;
+	outline:none;
+	font-size:60px;
+	color:#ccc;
+	margin-top:-5px;
+	padding-top:0px;
+	margin-left:0px;
+	padding-left:0px;
+}
+
+.col-xs-3.quiz1{
+	/*background:lime;*/
+	margin:0;
+	padding:0;
+	padding-left:15px;
+}
+
+.col-xs-6.quiz2{
+	/*background:blue;*/
+		margin:0;
+	padding:0;
+	margin-top:5px;
+}
+
+.col-xs-3.quiz3{
+	margin:0;
+	padding:0;
+	padding-right:10px;
+	/*background:red;*/
 }
 
 @media screen and (max-width: 768px) {

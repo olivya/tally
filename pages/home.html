@@ -1,16 +1,16 @@
-<div class="jumbotron text-center">
-	    	<div ng-if="noQuestions">
-    			<p>Welcome to Tally!</p>
-    			<p>You don't have any questions yet.</p>
-    			<p>Tap&nbsp;&nbsp;<i class="fa fa-edit"></i> above to add some,
-    				then come back to this page to quiz yourself!</p>
-    		</div>
+<div class="jumbotron">
+	<div ng-show="noQuestions">
+		<p>Welcome to Tally!</p>
+		<p>You don't have any questions yet.</p>
+		<p>Tap&nbsp;&nbsp;<i class="fa fa-edit"></i> above to add some,
+			then come back to this page to quiz yourself!</p>
+	</div>
 
-	<div ng-repeat="q in questionBank">
-    	<div ng-if="question_index == $index">
-        	{{q.question}}
-				<ul>
-					<li id="optionsList" ng-repeat="option in q.options track by $index">		
+	<div id="quiz" ng-repeat="q in questionBank">
+		<div ng-if="question_index == $index">
+	    	<span id="quizQuestion">{{q.question}}</span>
+				<ul id="optionsList">
+					<li ng-repeat="option in q.options track by $index">		
 						<label>
 						<input 	type="radio"
 								ng-model="userInput.answer"
@@ -19,12 +19,31 @@
 								ng-click="erase()">
 						{{option}} 
 						</label>
-					</li>
+					</li> 
 				</ul>
 			<div ng-if="userCorrect"><i class="fa fa-check"></i>Correct!</div>
 			<div ng-if="userWrong"><i class="fa fa-times"></i>Try again!</div>
-			<button ng-click="check()">Check answer</button>
-    	</div>
+		</div>
 	</div>
-    <div ng-hide="questionBank.length <= 1"><button ng-click="next();erase()">Next</button></div>
+
+	<div class="row">
+
+		<div class="col-xs-3 quiz1">
+			<div ng-hide="questionBank.length < 1">
+				<button id="backButton"ng-click="next();erase()"><i class="fa fa-arrow-circle-left"></i></button>
+			</div>
+		</div>
+
+	 	<div class="col-xs-6 quiz2">
+			<button class="btn check-answer" ng-click="check()">Check answer</button>
+		</div>
+
+		<div class="col-xs-3 quiz3">
+			<div ng-hide="questionBank.length < 1">
+				<button id="nextButton"ng-click="next();erase()"><i class="fa fa-arrow-circle-right"></i></button>
+			</div>
+		</div>
+	</div>
+
 </div>
+
