@@ -250,9 +250,8 @@ input[type="radio"]:checked + div {
 	background:rgba(0,0,0,0);
 	border:none;
 	outline:none;
-	font-size:60px;
+	font-size:55px;
 	color:#ccc;
-	margin-top:-5px;
 	padding-top:0px;
 	margin-left:0px;
 	padding-left:0px;
@@ -263,32 +262,32 @@ input[type="radio"]:checked + div {
 	background:rgba(0,0,0,0);
 	border:none;
 	outline:none;
-	font-size:60px;
+	font-size:55px;
 	color:#ccc;
-	margin-top:-5px;
 	padding-top:0px;
 	margin-left:0px;
 	padding-left:0px;
+	float:left;
 }
 
 .col-xs-3.quiz1{
 	/*background:lime;*/
 	margin:0;
 	padding:0;
-	padding-left:15px;
+	padding-left:10px;
 }
 
 .col-xs-6.quiz2{
 	/*background:blue;*/
-		margin:0;
+	margin:0;
 	padding:0;
-	margin-top:5px;
+	margin-top:15px;
 }
 
 .col-xs-3.quiz3{
 	margin:0;
 	padding:0;
-	padding-right:10px;
+	padding-right:5px;
 	/*background:red;*/
 }
 
