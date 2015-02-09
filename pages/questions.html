@@ -14,11 +14,12 @@
 	<div class="panel" ng-show="isSelected(1)"> 
 
 	<form name="addQuestionForm" id="addQuestionForm" ng-submit="addQuestion()" novalidate>
-			<input type="text"
+			<!-- <input type="text" -->
+			<textarea rows="2"
 				placeholder="Question"
 				ng-model="newQuestion"
 				class="form-control question-input"
-				required/><p/>
+				required><p/></textarea>
 
 
 	<div class="row">
@@ -94,7 +95,7 @@
 </form>
 
 
-<p ng-show="errorMessageTriggered">Please complete all fields</p>
+<p ng-show="errorMessageTriggered">Please complete all fields, including selecting whch of your answers is correct!</p>
 </div>
 
 	</span>

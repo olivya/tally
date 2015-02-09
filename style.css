@@ -137,7 +137,7 @@ ol {
 	color: #DFBFFF;
 	border: 2px solid #DFBFFF;
  	border-radius: 8px 8px 8px 8px;
- 	line-height: 17px;
+ 	line-height: 20px;
  	padding-left:30px;
  	padding-right:30px;
 }
@@ -152,7 +152,7 @@ ol {
 }
 
 .nav-pills {
-	font-size:16px;
+	font-size:21px;
 	display:inline-block;
 	font-weight: 300;
 }
@@ -185,12 +185,16 @@ input[type="radio"]:checked + div {
 }
 .input-group {
 	width:100%;
+	margin-top:5px;
 }
 
 .form-control.option-input {
 	background:rgba(0,0,0,0.1);
 	border:0px;
 	outline:0px;
+	font-size:21px;
+	margin-top:10px;
+	height:2em;
 }
 
 .form-control.question-input {
@@ -199,6 +203,12 @@ input[type="radio"]:checked + div {
 	outline:0px;
 	/*margin-right:8px;*/
 	width:100%;
+	font-size:21px;
+	margin-top:10px;
+}
+
+textarea {
+	resize: none;
 }
 
 .form-control{
@@ -230,14 +240,14 @@ input[type="radio"]:checked + div {
 	background:#DFBFFF;
 	color:#fff;
 	border-radius: 8px;
-	font-size:16px;
+	font-size:21px;
 	padding: 10px 16px;
 }
-
 
 .row.quizQs {
 	width:100%;
 }
+
 .btn.check-answer {
 	background:#45EBC2;
 	color:#fff;
