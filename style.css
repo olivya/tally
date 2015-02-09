@@ -314,7 +314,8 @@ textarea {
 	/*padding:0;*/
 }
 
-/*Reference for styling radio buttons:
+/*Begin radio button styling
+Reference for styling radio buttons:
 https://stackoverflow.com/questions/4516217/make-radio-button-bigger
 (Cas Bloem's answer)*/
 input[type=radio] {
@@ -341,29 +342,20 @@ input[type=radio]:checked + span {
     height: 1.5em;
     vertical-align: middle;
 }
-/*End reference for radio buttons*/
+/*End radio button styling*/
 
-/*.ng-leave {
+
+.ng-leave {
 	transition:0.75s;
 	opacity:1;
 }
 .ng-leave-active {
-	opacity:0;
+	-webkit-animation:0.75s fadeOut;
 }
 
-.ng-enter{
-	transition:0.75s;
-	opacity:1;
-}
-.ng-enter-active {
-	opacity:0;
-}*/
-
-/*.ng-hide-add {
-    -webkit-animation: animation:0.5s lightSpeedOut ease;
-    display: block !important;
-}*/
-
+/*Following animations are from animate.css
+https://daneden.github.io/animate.css/ 
+*/
 .panel.ng-hide-remove {
     -webkit-animation:0.5s fadeInRight ease;
 }
@@ -371,6 +363,7 @@ input[type=radio]:checked + span {
 .quizAnim.ng-hide-remove {
     -webkit-animation:0.5s fadeInRight ease;
 }
+/*End animate.css animations*/
  
 .correct,
 .incorrect {
@@ -385,3 +378,18 @@ input[type=radio]:checked + span {
 }
 
 #x { color:#FF3366; }
+
+.ng-leave {
+	-webkit-animation:1s fadeOut;
+}
+.ng-leave-active {
+	-webkit-animation:1s fadeOut;
+}
+
+/*.ng-enter{
+	transition:0.75s;
+	opacity:1;
+}
+.ng-enter-active {
+	opacity:0;
+}*/
