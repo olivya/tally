@@ -118,8 +118,8 @@ ol {
 	list-style-type: none;
 }
 label.ng-binding {
-	margin-top:15px;
-	margin-bottom:15px;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 #quiz {
 	font-size:21px;
@@ -140,8 +140,8 @@ label.ng-binding {
 }
 
 .nav-pills>li>a {
-	color: #DFBFFF;
-	border: 2px solid #DFBFFF;
+	color: #CB99FE;
+	border: 2px solid #CB99FE;
  	border-radius: 8px 8px 8px 8px;
  	line-height: 20px;
  	padding-left:20px;
@@ -152,7 +152,7 @@ label.ng-binding {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus
 {
-	background-color: #DFBFFF;
+	background-color: #CB99FE;
 	margin-right:5px;
 	margin-left:5px;
 }
@@ -222,7 +222,7 @@ textarea {
 }
 
 .btn.submit-question {
-	background:#DFBFFF;
+	background:#CB99FE;
 	color:#fff;
 	border-radius: 8px;
 	font-size:21px;
@@ -234,7 +234,7 @@ textarea {
 }
 
 .btn.check-answer {
-	background:#45EBC2;
+	background:#2ED3AA;
 	color:#fff;
 	border-radius: 8px;
 	font-size:18px;
@@ -336,8 +336,8 @@ input[type=radio] + span {
    margin:0px;
 }
 input[type=radio]:checked + span {
-    background:#DFBFFF;
-    border: 1px solid #DFBFFF;
+    background:#CB99FE;
+    border: 1px solid #CB99FE;
 }
 .radioButtons {
     width: 2em;
@@ -380,12 +380,12 @@ https://daneden.github.io/animate.css/
 }
 
 #check {
-	color:#45EBC2;
+	color:#2ED3AA;
 }
 
 #check2 {
-	color:#45EBC2;
-	font-size:2em;
+	color:#2ED3AA;
+	font-size:2.5em;
 }
 
 #x { color:#FF3366; }

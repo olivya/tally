@@ -6,7 +6,7 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 		$scope.noQuestions = true;
 	}
 	else $scope.noQuestions = false;
-	
+
 	$scope.location = $location.path();
 
 	//Referenced "Shaping up with AngularJS Tutorial' for tabs:
@@ -88,7 +88,7 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
       $scope.showMessage = true;
       $timeout(function() {
           $scope.showMessage = false;
-          }, 2000);
+          }, 3000);
     };
 
 });
