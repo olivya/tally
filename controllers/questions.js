@@ -18,7 +18,7 @@ tally.controller('questionsController', function($scope, QuestionBank) {
 	$scope.message = 'Tally is a customizable trivia app.';
 
 	$scope.addQuestion = function(){
-		console.log($scope.addQuestionForm);
+		// console.log($scope.addQuestionForm);
 
 		if($scope.addQuestionForm.$valid) {
 			$scope.questionBank.push(
@@ -32,6 +32,8 @@ tally.controller('questionsController', function($scope, QuestionBank) {
 					answer:$scope.setAnswer
 				});
 
+			console.log($scope.setAnswer);
+			
 			$scope.newQuestion = "";
 			$scope.newOptionA = "";
 			$scope.newOptionB = "";

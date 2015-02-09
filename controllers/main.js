@@ -25,6 +25,9 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
 
 	$scope.check = function () {
     	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
+      
+      console.log($scope.correctAnswer);
+      console.log($scope.userInput.answer);
 
     	if ($scope.correctAnswer == $scope.userInput.answer){
     		$scope.userCorrect = true;

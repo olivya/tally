@@ -235,6 +235,9 @@ input[type="radio"]:checked + div {
 }
 
 
+.row.quizQs {
+	width:100%;
+}
 .btn.check-answer {
 	background:#45EBC2;
 	color:#fff;
@@ -252,10 +255,14 @@ input[type="radio"]:checked + div {
 	outline:none;
 	font-size:55px;
 	color:#ccc;
-	padding-top:0px;
-	margin-left:0px;
-	padding-left:0px;
+/*	padding-top:0px;
+	margin-left:auto;
+	padding-left:0px;*/
 	float:right;
+	margin:0;
+	padding:0;
+	padding-right:10px;
+	margin-top: 10px;
 }
 
 #backButton {
@@ -266,7 +273,7 @@ input[type="radio"]:checked + div {
 	color:#ccc;
 	padding-top:0px;
 	margin-left:0px;
-	padding-left:0px;
+	padding-left:10px;
 	float:left;
 }
 
@@ -274,7 +281,7 @@ input[type="radio"]:checked + div {
 	/*background:lime;*/
 	margin:0;
 	padding:0;
-	padding-left:10px;
+	/*padding-left:10px;*/
 }
 
 .col-xs-6.quiz2{
@@ -282,14 +289,15 @@ input[type="radio"]:checked + div {
 	margin:0;
 	padding:0;
 	margin-top:15px;
+	height:100px;
+	height:200px;
 }
 
 .col-xs-3.quiz3{
 	margin:0;
 	padding:0;
-	padding-right:5px;
+	/*padding-right:5px;*/
 	/*background:red;*/
-	float:right;
 }
 
 @media screen and (max-width: 768px) {
