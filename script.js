@@ -38,7 +38,3 @@ tally.factory("QuestionBank", function() {
     },
   };
 });
-
-if($(window).width() > 600) {
-  alert("It appears you may not be on a mobile device! Tally is optimized for mobile devices - if you are on a computer, it is recommended you decrease the size of your browser window to avoid unexpected behaviour.");
-}
