@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	<div ng-show="noQuestions">
 		<p>Welcome to Tally!</p>
-		<p>You don't have any questions yet.</p>
+		<p>You haven't added any questions yet.</p>
 		<p>Tap&nbsp;&nbsp;<i class="fa fa-edit"></i> above to add some,
 			then come back to this page to quiz yourself!</p>
 	</div>
@@ -30,7 +30,7 @@
 	<div class="row quizQs">
 
 		<div class="col-xs-3 quiz1">
-			<div ng-hide="questionBank.length < 1">
+			<div ng-hide="questionBank.length <= 1">
 				<button id="backButton"ng-click="back();erase()">
 					<i class="fa fa-arrow-circle-left"></i>
 				</button>
@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="col-xs-3 quiz3">
-			<div ng-hide="questionBank.length < 1">
+			<div ng-hide="questionBank.length <= 1">
 				<button id="nextButton"ng-click="next();erase()">
 					<i class="fa fa-arrow-circle-right"></i>
 				</button>

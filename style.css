@@ -3,6 +3,7 @@
 }*/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,300italic,400);
+
 p{
 	font-size:21px;
 	font-weight:100;
@@ -21,6 +22,7 @@ p.help i {
 form { border: 0px; }
 #main {
 	margin-top: 2.5em;
+	padding:0px 10px 0px 10px;
 }
 
 .container {
@@ -47,7 +49,7 @@ ul.nav-justified.top-nav {
 }
 
 .top-nav {
-	background:rgba(0,0,0,0.6);
+	background:rgba(0,0,0,0.8);
 	top:0;
 }
 
@@ -350,25 +352,25 @@ input[type=radio]:checked + span {
 }
 /*End radio button styling*/
 
-
+/*
 .ng-leave {
 	transition:0.75s;
 	opacity:1;
 }
 .ng-leave-active {
 	-webkit-animation:0.75s fadeOut;
-}
+}*/
 
 /*Following animations are from animate.css
 https://daneden.github.io/animate.css/ 
 */
-.panel.ng-hide-remove {
+/*.panel.ng-hide-remove {
     -webkit-animation:0.5s fadeInRight ease;
 }
 
 .quizAnim.ng-hide-remove {
     -webkit-animation:0.5s fadeInRight ease;
-}
+}*/
 /*End animate.css animations*/
  
 .correct,
@@ -390,12 +392,20 @@ https://daneden.github.io/animate.css/
 
 #x { color:#FF3366; }
 
-.ng-leave {
+.full-opacity {
+	opacity:1;
+}
+
+.help > a, a:hover, a:active, a:visited {
+	color:#CB99FE;
+}
+
+/*.ng-leave {
 	-webkit-animation:1s fadeOut;
 }
 .ng-leave-active {
 	-webkit-animation:1s fadeOut;
-}
+}*/
 
 /*.ng-enter{
 	transition:0.75s;

@@ -4,7 +4,6 @@ tally.controller('helpController', function($scope,$location,QuestionBank) {
 	$scope.quiz = 'When you\'re ready, tap this icon to take your quiz!';
 	$scope.location = $location.path();
 
-
 	$scope.questionBank = QuestionBank.all();
 
   $scope.question_index = 0;
@@ -16,5 +15,31 @@ tally.controller('helpController', function($scope,$location,QuestionBank) {
   	$scope.noQuestions = false;
   };
 
+    $scope.updateNav = function(){
+      console.log($scope.location);
+      console.log('path:',path);
+    };
 
+    console.log($scope.location);
+
+    if($scope.location === "/") {
+      console.log("HOME");
+      $("#home").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+    
+    if($scope.location === "/questions") {
+      console.log("Qs");
+      $("#questions").fadeTo(200, 1);
+      $("#home").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+
+    if($scope.location === "/help") {
+      console.log("HALP");
+      $("#help").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#home").fadeTo(200, 0.4);
+    }
 });

@@ -7,7 +7,7 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
 	$scope.questionBank = QuestionBank.all();
 
   $scope.question_index = 0;
-  console.log($scope.questionBank.length);
+  // console.log($scope.questionBank.length);
 
   if ($scope.questionBank.length===0) {
   	$scope.noQuestions = true;
@@ -39,8 +39,8 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
 	$scope.check = function () {
     	$scope.correctAnswer = $scope.questionBank[$scope.question_index].answer;
       
-      console.log($scope.correctAnswer);
-      console.log($scope.userInput.answer);
+      // console.log($scope.correctAnswer);
+      // console.log($scope.userInput.answer);
 
     	if ($scope.correctAnswer == $scope.userInput.answer){
     		$scope.userCorrect = true;
@@ -56,4 +56,32 @@ tally.controller('mainController', function($scope, $route, $location, QuestionB
     	$scope.userWrong= false;
     	$scope.userCorrect = false;
     };
+
+    $scope.updateNav = function(path){
+      console.log($scope.location);
+      console.log('path:',path);
+    };
+
+    console.log($scope.location);
+
+    if($scope.location === "/") {
+      console.log("HOME");
+      $("#home").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+    
+    if($scope.location === "/questions") {
+      console.log("Qs");
+      $("#questions").fadeTo(200, 1);
+      $("#home").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+
+    if($scope.location === "/help") {
+      console.log("HALP");
+      $("#help").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#home").fadeTo(200, 0.4);
+    }
 });

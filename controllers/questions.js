@@ -1,5 +1,5 @@
 tally.controller('questionsController', function($scope, QuestionBank, $location,$timeout) {
-	
+	$scope.location = $location.path();
 	$scope.questionBank = QuestionBank.all();
 
 	if ($scope.questionBank.length === 0) {
@@ -7,7 +7,6 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 	}
 	else $scope.noQuestions = false;
 
-	$scope.location = $location.path();
 
 	//Referenced "Shaping up with AngularJS Tutorial' for tabs:
 	$scope.tab = 1;
@@ -39,7 +38,7 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
 					answer:$scope.setAnswer
 				});
 
-			console.log($scope.setAnswer);
+			// console.log($scope.setAnswer);
 
 			$scope.newQuestion = "";
 			$scope.newOptionA = "";
@@ -85,10 +84,34 @@ tally.controller('questionsController', function($scope, QuestionBank, $location
     };
 
     $scope.confirm = function() {
-      $scope.showMessage = true;
-      $timeout(function() {
-          $scope.showMessage = false;
-          }, 3000);
+    	if($scope.addQuestionForm.$valid) {
+	      $scope.showMessage = true;
+	      $timeout(function() {
+	          $scope.showMessage = false;
+	          }, 3000);
+		}
     };
 
+    console.log($scope.location);
+
+    if($scope.location === "/") {
+      console.log("HOME");
+      $("#home").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+    
+    if($scope.location === "/questions") {
+      console.log("Qs");
+      $("#questions").fadeTo(200, 1);
+      $("#home").fadeTo(200, 0.4);
+      $("#help").fadeTo(200, 0.4);
+    }
+
+    if($scope.location === "/help") {
+      console.log("HALP");
+      $("#help").fadeTo(200, 1);
+      $("#questions").fadeTo(200, 0.4);
+      $("#home").fadeTo(200, 0.4);
+    }
 });
